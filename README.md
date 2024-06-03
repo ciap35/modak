@@ -1,4 +1,4 @@
-# modak
+# Modak
 Modak Challenge 
 Author: Carlos Ignacio Aguilera Patalano
 Version: 1.0
