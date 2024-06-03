@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: core-notification-service
+  datasource:
+    url: jdbc:h2:mem:notificationService
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    h2:
+      console:
+        enabled: true
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+notification:
+  rateLimits:
+    status:
+      limit: 2
+      duration: 1
+      unit: MINUTES
+    news:
+      limit: 1
+      duration: 1
+      unit: DAYS
+    marketing:
+      limit: 3
+      duration: 1
+      unit: HOURS

@@ -1,2 +1,0 @@
-# modak
-Modak Challenge
