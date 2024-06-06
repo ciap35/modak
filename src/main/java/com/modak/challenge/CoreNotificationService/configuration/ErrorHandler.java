@@ -27,7 +27,7 @@ import java.util.Objects;
 public class ErrorHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = { ExceedLimitException.class })
     public ResponseEntity<ErrorMessage> handleExceedLimitException(ExceedLimitException ex) {
-        log.error("[ErrorHandler:handleExceedLimitException] "+ ex.getMessage());
+        log.error("[ErrorHandler:handleExceedLimitException]: "+ ex.getErrorDescription());
         ex.printStackTrace();
         return new ResponseEntity<>(
                 ErrorMessage.builder()
@@ -49,7 +49,7 @@ public class ErrorHandler extends ResponseEntityExceptionHandler {
     @Override
     @NonNull
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        log.error("[ErrorHandler:handleMethodArgumentNotValid] " + ex.getMessage());
+        log.error("[ErrorHandler:handleMethodArgumentNotValid]: " + ex.getMessage());
         final BindingResult bindingResult = ex.getBindingResult();
         List<ErrorMessage> errorList = new ArrayList<>(1);
         if (bindingResult.hasErrors()) {
