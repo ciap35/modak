@@ -26,6 +26,12 @@ notification:
       duration: 1
       unit: DAYS
     marketing:
-      limit: 3
+      limit: 5
       duration: 1
-      unit: HOURS
+      dailyLimit: 20
+      unit: MINUTES
+#    marketing_day:
+#      limit: 3
+#      duration: 1
+#      unit: DAYS
+
